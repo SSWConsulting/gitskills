@@ -1,0 +1,136 @@
+﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a, .btn-link {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.content {
+    padding-top: 1.1rem;
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid red;
+}
+
+.validation-message {
+    color: red;
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+
+/*User defined*/
+
+.app-content {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.chart-area {
+    max-height: fit-content;
+    margin: auto;
+}
+
+.skill-title {
+    text-emphasis: bold;
+    margin: 10px;
+}
+
+.brand-title {
+    color: white;
+}
+
+.topic-badge {
+    margin: 5px;
+}
+
+.badge-container {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skill-lookup {
+    z-index: 99999999;
+}
+
+.loader {
+    color:grey;
+    font-family:sans-serif;
+    height:5vh;
+    left:50%;
+    overflow-x:hidden;
+    padding-top:7vh;
+    position:absolute;
+    text-align:center;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:50vw;
+    &:before {
+      animation:left-to-right 3s alternate infinite linear;
+      background-image:linear-gradient(to right, transparent, red, transparent);
+      // bottom:0;
+      content:"";
+      height:5vh;
+      left:0;
+      overflow:hidden;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+    &:after {
+      background-image:repeating-linear-gradient(
+        90deg,
+        white,
+        white 1vw,
+        transparent 1vw,
+        transparent 10vw
+      );
+      content:"";
+      height:5vh;
+      left:0;
+      overflow:hidden;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+  }
+  
+  @keyframes left-to-right {
+    0% {
+      transform:translateX(-100%);
+    }
+    100% {
+      transform:translateX(100%);
+    }
+  }
