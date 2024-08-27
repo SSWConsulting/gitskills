@@ -1,8 +1,6 @@
-﻿@using gitskills.Models
-@using gitskills.Components
+﻿@implements IDisposable
 @inject StateContainer StateContainer
-@inject GithubService githubService
-@implements IDisposable
+@inject GitHubService githubService
 @using System.Collections.ObjectModel
 
 @page "/skills"

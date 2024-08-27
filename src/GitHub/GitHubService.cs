@@ -1,12 +1,9 @@
 ﻿using Blazored.LocalStorage;
-using GraphQL.Client.Http;
 using GraphQL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using GraphQL.Client.Http;
+using GraphQL.Client.Serializer.Newtonsoft;
+using SSW.GitSkills.Models;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SSW.GitSkills.GitHub;
 
@@ -27,7 +24,7 @@ public class GitHubService
 
     private Organization organization { get; set; }
 
-    public GithubService(ISyncLocalStorageService localStorageService)
+    public GitHubService(ISyncLocalStorageService localStorageService)
     {
         _graphQlClient = new GraphQLHttpClient("https://api.github.com/graphql", new NewtonsoftJsonSerializer());
 
@@ -164,4 +161,4 @@ query OrganizationQuery ($name: String!) {
         OperationName = "OrganizationQuery"
     };
 }
-}
+
