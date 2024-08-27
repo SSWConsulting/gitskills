@@ -1,16 +1,30 @@
-﻿@inherits LayoutComponentBase
+﻿@using gitskills.Models
+@inject StateContainer StateContainer
+@inherits LayoutComponentBase
+@implements IDisposable
+
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+    <Layout Loading="@StateContainer.isLoading">
+        <LayoutHeader>
+            <NavMenu />
+        </LayoutHeader>
+        <LayoutContent>
+            <div class="content app-content">
+                @Body
+            </div>
+        </LayoutContent>
+    </Layout>
 </div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        StateContainer.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        StateContainer.OnChange -= StateHasChanged;
+    }
+
+}

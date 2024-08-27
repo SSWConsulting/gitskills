@@ -101,3 +101,87 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.app-content {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.chart-area {
+    max-height: fit-content;
+    margin: auto;
+}
+
+.skill-title {
+    text-emphasis: bold;
+    margin: 10px;
+}
+
+.brand-title {
+    color: white;
+}
+
+.topic-badge {
+    margin: 5px;
+}
+
+.badge-container {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skill-lookup {
+    z-index: 99999999;
+}
+
+.loader {
+    color:grey;
+    font-family:sans-serif;
+    height:5vh;
+    left:50%;
+    overflow-x:hidden;
+    padding-top:7vh;
+    position:absolute;
+    text-align:center;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:50vw;
+    &:before {
+      animation:left-to-right 3s alternate infinite linear;
+      background-image:linear-gradient(to right, transparent, red, transparent);
+      // bottom:0;
+      content:"";
+      height:5vh;
+      left:0;
+      overflow:hidden;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+    &:after {
+      background-image:repeating-linear-gradient(
+        90deg,
+        white,
+        white 1vw,
+        transparent 1vw,
+        transparent 10vw
+      );
+      content:"";
+      height:5vh;
+      left:0;
+      overflow:hidden;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+  }
+  
+  @keyframes left-to-right {
+    0% {
+      transform:translateX(-100%);
+    }
+    100% {
+      transform:translateX(100%);
+    }
+  }
